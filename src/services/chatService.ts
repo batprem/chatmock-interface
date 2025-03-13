@@ -18,7 +18,7 @@ export const INITIAL_MESSAGES = [
   {
     id: "1",
     content: "Hello! I'm your AI assistant. How can I help you today?",
-    sender: "bot",
+    sender: "bot" as const,
     timestamp: new Date(Date.now() - 60000).toISOString()
   }
 ];
@@ -44,7 +44,7 @@ export const sendMessage = async (message: string): Promise<Message> => {
       resolve({
         id: Date.now().toString(),
         content: BOT_RESPONSES[responseIndex],
-        sender: "bot",
+        sender: "bot" as const,
         timestamp: new Date().toISOString()
       });
     }, RESPONSE_DELAY);
