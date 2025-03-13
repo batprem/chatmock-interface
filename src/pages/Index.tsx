@@ -1,11 +1,17 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import ChatContainer from "@/components/ChatContainer";
+import ChatHeader from "@/components/ChatHeader";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="flex flex-col h-screen bg-gray-100">
+      <div className="container mx-auto max-w-3xl h-full p-4 md:p-6 flex flex-col">
+        <div className="flex flex-col flex-1 overflow-hidden rounded-xl shadow-lg bg-white">
+          <ChatHeader />
+          <div className="flex-1 overflow-hidden">
+            <ChatContainer />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,21 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				chat: {
+					'user-bubble': '#E5DEFF',
+					'bot-bubble': '#f1f5f9',
+				},
+				keyframes: {
+					"typing-animation": {
+						"0%": { transform: "translateY(0px)" },
+						"28%": { transform: "translateY(-5px)" },
+						"44%": { transform: "translateY(0px)" },
+					},
+				},
+				animation: {
+					"typing-dot": "typing-animation 1.5s infinite ease-in-out",
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +99,22 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'typing-dot': {
+					'0%': { transform: 'translateY(0px)' },
+					'28%': { transform: 'translateY(-5px)' },
+					'44%': { transform: 'translateY(0px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.3s ease-out',
+				'typing-dot': 'typing-dot 1.5s infinite ease-in-out'
 			}
 		}
 	},
